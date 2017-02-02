@@ -43,7 +43,7 @@ class MigrateCommand extends Command
      */
     public function fire(ConfigurationProvider $provider, Migrator $migrator)
     {
-        if (!$this->confirmToProceed()) {
+        if (!$this->option('force') and !$this->confirmToProceed()) {
             return;
         }
 
