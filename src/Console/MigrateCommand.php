@@ -99,7 +99,7 @@ class MigrateCommand extends Command
             ));
         }
 
-        if (!$this->confirm('Are you sure you wish to continue?')) {
+        if (!$this->option('force') and !$this->confirm('Are you sure you wish to continue?')) {
             $this->error('Migration cancelled!');
             die;
         }
